@@ -1,9 +1,10 @@
 import Prompt from "@models/mongoose/Prompt";
 import connectToDB from "@utils/database";
 import { PipelineStage } from "mongoose";
-import { NextApiRequest } from "next";
 
-export async function GET(request: NextApiRequest) {
+import { NextRequest } from "next/server";
+
+export async function GET(request: NextRequest) {
   try {
     await connectToDB();
     const url = new URL(request.url!);
